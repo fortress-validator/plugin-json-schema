@@ -4,7 +4,7 @@ import jsonSchema from './jsonSchema';
 describe('Rule "jsonSchema"', () => {
   describe('set to an invalid schema', () => {
     const schema = {
-      type: 'foo',
+      type: true,
     };
 
     test('should throw an error', () => {
@@ -27,7 +27,9 @@ describe('Rule "jsonSchema"', () => {
           minProperties: 1,
         },
       },
-      required: ['title'],
+      required: [
+        'title',
+      ],
       definitions: {
         nestedObject: {
           type: 'object',
@@ -39,7 +41,9 @@ describe('Rule "jsonSchema"', () => {
               $ref: '#/definitions/nestedObject',
             },
           },
-          required: ['title'],
+          required: [
+            'title',
+          ],
           minProperties: 1,
         },
       },
