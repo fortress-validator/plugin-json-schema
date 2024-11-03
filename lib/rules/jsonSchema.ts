@@ -44,7 +44,7 @@ const compileSchema = (schema: Record<string, unknown>): ValidateFunction => {
     schemaCache.set(cacheKey, validate);
     return validate;
   } catch (err) {
-    throw new Error(`${(err as Error).message.replace('schema is invalid:', 'Invalid schema:')}`);
+    throw new Error(`Invalid schema: ${(err as Error).message.replace('schema is invalid: ', '')}`);
   }
 };
 
