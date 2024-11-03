@@ -1,0 +1,41 @@
+{
+  "name": "@fortress-validator/plugin-json-schema",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p ./tsconfig.build.json && vite build",
+    "preview": "vite preview",
+    "lint": "eslint lib",
+    "test": "npm run test:unit -- --run",
+    "test:unit": "vitest"
+  },
+  "peerDependencies": {
+    "ajv": "^8.17.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.12",
+    "eslint": "^8.57.0",
+    "globals": "^15.8.0",
+    "typescript": "^5.0.2",
+    "typescript-eslint": "^7.17.0",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^4.2.3",
+    "vitest": "^2.1.2"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.js"
+    }
+  }
+}
