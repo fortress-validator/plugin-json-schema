@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint lib",
     "test": "npm run test:unit -- --run",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "release": "npm run test && npm run build && npm publish --access public"
   },
   "peerDependencies": {
     "ajv": "^8.17.1"
