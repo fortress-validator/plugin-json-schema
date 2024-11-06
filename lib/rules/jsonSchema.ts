@@ -1,15 +1,13 @@
 import { Rule, RuleArguments } from '@fortress-validator/types';
 import { isEmpty } from '@fortress-validator/utils';
-import Ajv, { ValidateFunction } from 'ajv';
+import { ValidateFunction } from 'ajv';
+import { ajv, schemaCache } from '~/core/ajv';
 import locales from '~/localizers';
 
 export interface JSONSchemaRuleArguments extends RuleArguments {
   locale: string;
   schema: Record<string, unknown>;
 }
-
-const ajv = new Ajv();
-const schemaCache = new Map<string, ValidateFunction>();
 
 const jsonSchema: Rule<JSONSchemaRuleArguments> = ({ locale, schema }) => {
   const validate = compileSchema(schema);
