@@ -4,7 +4,7 @@ import zhTW from './zh-TW';
 
 const localizers: Localizers = {
   en,
-  zhTW,
+  'zh-TW': zhTW,
 };
 
 export default localizers;

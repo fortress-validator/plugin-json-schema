@@ -1,6 +1,6 @@
 import Localizer from '~/types/Localizer';
 
-const localizer: Localizer = (errors) => {
+const localizer: Localizer = (field, errors) => {
   if (!errors) return;
   for (const e of errors) {
     let out;
@@ -166,7 +166,7 @@ const localizer: Localizer = (errors) => {
     }
     e.message = e.instancePath
       ? `The property at path "${e.instancePath}" ${out}.`
-      : `The json schema field ${out}.`;
+      : `The ${field.toLowerCase()} field ${out}.`;
   }
 };
 

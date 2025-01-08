@@ -1,7 +1,7 @@
 import { ErrorObject } from 'ajv';
 
 interface Localizer {
-  (errors: ErrorObject[]): void;
+  (field: string, errors: ErrorObject[]): void;
 }
 
 export default Localizer;

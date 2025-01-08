@@ -1,6 +1,6 @@
 import Localizer from '~/types/Localizer';
 
-const localizer: Localizer = (errors) => {
+const localizer: Localizer = (_, errors) => {
   if (!errors) return;
   for (const e of errors) {
     let out;
@@ -157,7 +157,7 @@ const localizer: Localizer = (errors) => {
     }
     e.message = e.instancePath
       ? `路徑為 "${e.instancePath}" 的屬性${out}`
-      : out;
+      : `此欄位${out}`;
   }
 };
 

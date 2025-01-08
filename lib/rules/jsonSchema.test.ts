@@ -8,7 +8,7 @@ describe('Rule "jsonSchema"', () => {
     };
 
     test('should throw an error', () => {
-      expect(() => jsonSchema({ locale: 'en', schema })).toThrowError('Invalid schema');
+      expect(() => jsonSchema({ locale: 'en', field: 'Input', schema })).toThrowError('Invalid schema');
     });
   });
 
@@ -49,7 +49,7 @@ describe('Rule "jsonSchema"', () => {
       },
     };
 
-    const validate = jsonSchema({ locale: 'en', schema });
+    const validate = jsonSchema({ locale: 'en', field: 'Input', schema });
 
     test('should pass with valid input', () => {
       const input = JSON.stringify({
@@ -63,7 +63,7 @@ describe('Rule "jsonSchema"', () => {
       test('without "title" property', () => {
         const input = JSON.stringify({});
 
-        expect(validate(input)).toBe('The json schema field must have required property "title".');
+        expect(validate(input)).toBe('The input field must have required property "title".');
       });
 
       test('without "title" property in "nestedObject"', () => {

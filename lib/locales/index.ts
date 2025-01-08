@@ -4,7 +4,7 @@ import zhTW from './zh-TW';
 
 const locales: Locales = {
   en,
-  zhTW,
+  'zh-TW': zhTW,
 };
 
 export default locales;

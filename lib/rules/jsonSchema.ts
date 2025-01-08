@@ -6,10 +6,11 @@ import locales from '~/localizers';
 
 export interface JSONSchemaRuleArguments extends RuleArguments {
   locale: string;
+  field: string;
   schema: Record<string, unknown>;
 }
 
-const jsonSchema: Rule<JSONSchemaRuleArguments> = ({ locale, schema }) => {
+const jsonSchema: Rule<JSONSchemaRuleArguments> = ({ locale, field, schema }) => {
   const validate = compileSchema(schema);
   return (input: unknown) => {
     if (isEmpty(input)) return false;
@@ -25,7 +26,7 @@ const jsonSchema: Rule<JSONSchemaRuleArguments> = ({ locale, schema }) => {
     const { errors } = validate;
     if (errors && errors.length > 0) {
       const localize = locales[locale] || locales.en;
-      localize(errors);
+      localize(field, errors);
       const [error] = errors;
       return error.message || false;
     }
