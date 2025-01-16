@@ -42,5 +42,14 @@
       "import": "./dist/index.js",
       "require": "./dist/index.umd.js"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fortress-validator/plugin-json-schema"
+  },
+  "keywords": [
+    "form",
+    "validation",
+    "validator"
+  ]
 }
