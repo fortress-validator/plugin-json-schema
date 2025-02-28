@@ -10,7 +10,7 @@ export interface JSONSchemaRuleArguments extends RuleArguments {
   schema: Record<string, unknown>;
 }
 
-const jsonSchema: Rule<JSONSchemaRuleArguments> = ({ locale, field, schema }) => {
+const jsonSchemaRule: Rule<JSONSchemaRuleArguments> = ({ locale, field, schema }) => {
   const validate = compileSchema(schema);
   return (input: unknown) => {
     if (isEmpty(input)) return false;
@@ -47,4 +47,4 @@ const compileSchema = (schema: Record<string, unknown>): ValidateFunction => {
   }
 };
 
-export default jsonSchema;
+export default jsonSchemaRule;
