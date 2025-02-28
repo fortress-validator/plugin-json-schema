@@ -1,4 +1,4 @@
-import Localizer from '~/types/Localizer';
+import type Localizer from '~/types/Localizer';
 
 const localizer: Localizer = (field, errors) => {
   if (!errors) return;

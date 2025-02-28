@@ -1,4 +1,4 @@
-import { ErrorObject } from 'ajv';
+import type { ErrorObject } from 'ajv';
 
 interface Localizer {
   (field: string, errors: ErrorObject[]): void;

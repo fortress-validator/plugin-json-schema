@@ -1,4 +1,5 @@
-import Ajv, { ValidateFunction } from 'ajv';
+import type { ValidateFunction } from 'ajv';
+import Ajv from 'ajv';
 
 const ajv = new Ajv();
 

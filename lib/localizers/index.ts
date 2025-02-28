@@ -1,4 +1,4 @@
-import Localizers from '~/types/Localizers';
+import type Localizers from '~/types/Localizers';
 import en from './en';
 import zhTW from './zh-TW';
 

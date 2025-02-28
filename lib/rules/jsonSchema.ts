@@ -1,6 +1,6 @@
-import { Rule, RuleArguments } from '@fortress-validator/types';
+import type { Rule, RuleArguments } from '@fortress-validator/types';
 import { isEmpty } from '@fortress-validator/utils';
-import { ValidateFunction } from 'ajv';
+import type { ValidateFunction } from 'ajv';
 import { ajv, schemaCache } from '~/core/ajv';
 import locales from '~/localizers';
 
